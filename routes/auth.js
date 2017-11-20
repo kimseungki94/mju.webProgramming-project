@@ -2,7 +2,7 @@ module.exports = (app, passport) => {
   app.get('/signin', (req, res, next) => {
     res.render('signin');
   });
-
+//커밋추가 용도
   app.post('/signin', passport.authenticate('local-signin', {
     successRedirect : '/questions', // redirect to the secure profile section
     failureRedirect : '/signin', // redirect back to the signup page if there is an error

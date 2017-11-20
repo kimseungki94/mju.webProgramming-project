@@ -18,7 +18,7 @@ var questions = require('./routes/questions');
 var passportConfig = require('./lib/passport-config');
 
 var app = express();
-
+//commit 추가
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
