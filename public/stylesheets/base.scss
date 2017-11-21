@@ -45,14 +45,14 @@ a:hover {
 }
 
 .header > .navbar {
-  background-color: #011a72!important;
+  background-color: rgb(223, 122, 87)!important;
 }
 
 .search-input-group{
   margin: 1em 0;
   width: 100%;
   position: relative;
-  input { 
+  input {
     border-radius: 2em;
     padding-left: 2.5em;
     width: 100%!important;
@@ -65,4 +65,4 @@ a:hover {
     position: absolute;
   }
 
-} 
+}
