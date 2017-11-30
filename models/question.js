@@ -10,6 +10,7 @@ var schema = new Schema({
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
+  img: {type: String},  // 이미지의 path를 저장하기 위해 추가
   createdAt: {type: Date, default: Date.now}
 }, {
   toJSON: { virtuals: true},
