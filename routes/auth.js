@@ -9,6 +9,7 @@ module.exports = (app, passport) => {
     failureFlash : true // allow flash messages
   }));
 
+
   app.get('/auth/facebook',
     passport.authenticate('facebook', { scope : 'email' })
   );

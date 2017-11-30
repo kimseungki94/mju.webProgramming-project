@@ -1,28 +1,63 @@
 extends layout
 
 block hero-unit
-  .jumbotron
-    .container
+      .container        
       #carouselExampleControls.carousel.slide(data-ride='carousel')
-  .carousel-inner
-    .carousel-item.active
-      img.d-block.w-100(src='/images/a.jpg', alt='First slide')
-    .carousel-item
-      img.d-block.w-100(src='/images/b.jpg', alt='Second slide')
-    .carousel-item
-      img.d-block.w-100(src='/images/bg.jpg', alt='Third slide')
-  a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
-    span.carousel-control-prev-icon(aria-hidden='true')
-    span.sr-only Previous
-  a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
-    span.carousel-control-next-icon(aria-hidden='true')
-    span.sr-only Next
+       .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/images/a.jpg', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='/images/b.jpg', alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='/images/bg.jpg', alt='Third slide')
+        a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
 
-      
-      
-      
+          
+block a
+  .block1
+      .container
+        .abc
+          .fonts.hide-small
+            
+            | find your next eperience
+            i.fa.fa-address-book-o
+            |     
+            br
+            |     
+            br
+          |   
+          form.form-inline(action='/action_page.php')
+            .form-group.in
+              input#email.form-control(type='email', placeholder='Search events or categories', name='email')
+            |     
+            .form-group.in
+              input#pwd.form-control.hide-small(type='password', placeholder='Seoul, Republic of korea', name='pwd')
+            |     
+            button.btn.btn-default.hide-small(type='button', data-toggle='dropdown')
+              | All Dates
+              span.caret
+            |     
+            ul.dropdown-menu
+              li
+                a(href='#') Today
+              |       
+              li
+                a(href='#') Tomorrow
+              |       
+              li
+                a(href='#') This Week
+            |   
+            button.btn.btn-danger(type='button') SEARCH          
+
+              
 block content
   .container
+    Popular Events in Republic of Korea
     .row
       .col-md-6
         h3 서비스 목적
@@ -34,3 +69,68 @@ block content
           li 답변글 등록/삭제
           li 사용자 관리/인증
           li API
+          
+block b
+  .container
+    .row
+        .col-md-4
+          .thumbnail
+            a(href='images/b.jpg', target='_blank')
+              img(src='images/b.jpg', alt='Lights', style='width:100%')
+              |            
+              .topright Free
+              |           
+              .caption
+                | FRI, OCT 20 7:00 PM
+                p
+                  | Grease, School Edition - October 20, 2017
+                p
+                  | Seoul Foreign School | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, Yeonhui-ro
+              |     
+              .caption
+                | #Arts     #Performance
+                span.glyphicon.glyphicon-search
+                |    
+                span.glyphicon.glyphicon-envelope
+        |     
+        .col-md-4
+          .thumbnail
+            a(href='images/b.jpg', target='_blank')
+              img(src='images/b.jpg', alt='Nature', style='width:100%')
+              |            
+              .topright Free
+              |           
+              .caption
+                | FRI, OCT 20 7:00 PM
+                p
+                  | Grease, School Edition - October 20, 2017
+                p
+                  | Seoul Foreign School | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, Yeonhui-ro
+              |     
+              .caption
+                | #Arts     #Performance
+                span.glyphicon.glyphicon-search
+                |    
+                span.glyphicon.glyphicon-envelope
+        |     
+        .col-md-4
+          .thumbnail
+            a(href='images/b.jpg', target='_blank')
+              img(src='images/b.jpg', alt='Fjords', style='width:100%')
+              |            
+              .topright Free
+              |           
+              .caption
+                | FRI, OCT 20 7:00 PM
+                p
+                  | Grease, School Edition - October 20, 2017
+                p
+                  | Seoul Foreign School | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, Yeonhui-ro
+              |     
+              .caption
+                | #Arts   #Performance
+                span.glyphicon.glyphicon-search
+                |   
+                span.glyphicon.glyphicon-envelope
+
+  

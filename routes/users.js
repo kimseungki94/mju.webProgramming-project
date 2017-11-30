@@ -18,6 +18,7 @@ function validateForm(form, options) {
   name = name.trim();
   email = email.trim();
 
+
   if (!name) {
     return 'Name is required.';
   }

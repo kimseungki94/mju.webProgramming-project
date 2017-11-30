@@ -1,12 +1,68 @@
 .form-group
-  label(for="title") Title
+  label(for="title") 주문자명
   input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
 .form-group
-  label(for="question") Question
+  label(for="local") 주문장소
+  input.form-control(type="text", name="local", placeholder="What's your local?", value=question.local)
+.form-group
+  label(for="start") 시작시간
+  input.form-control(type="text", name="start", placeholder="When start?", value=question.start)
+.form-group
+  label(for="end") 종료시간
+  input.form-control(type="text", name="end", placeholder="When end?", value=question.end)
+.form-group
+  label(for="question") 상세설명
   textarea.form-control(name="content", rows="5")= question.content
 .form-group
-  label(for="tags") Tags
-  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+  label(for="kind") 음식종류
+  input.form-control(type="text", name="kind", placeholder="What kind?", value=question.kind)
+.form-group
+  .form-group
+    label(for='exampleFormControlSelect2') 몇명이 먹을거니?
+    select#exampleFormControlSelect2.form-control(multiple='')
+      option 1
+      option 2
+      option 3
+      option 4
+      option 5
+      option 6
+      option 7
+      option 8
+      option 9
+      option 10
+
+.form-group
+  .form-check.form-check-inline
+  label.form-check-label
+    input#inlineRadio1.form-check-input(type='radio', name='inlineRadioOptions', value='option1')
+    |  무료
+.form-check.form-check-inline
+  label.form-check-label
+    input#inlineRadio2.form-check-input(type='radio', name='inlineRadioOptions', value='option2')
+    |  유료
+
+.form-group
+  .form-row.align-items-center
+    .col-auto
+      label.mr-sm-2(for='inlineFormCustomSelect') 음식분야
+      select#inlineFormCustomSelect.custom-select.mb-2.mr-sm-2.mb-sm-0
+        option(selected='') 선택
+        option(value='1') 땅음식
+        option(value='2') 물음식
+        option(value='3') 공중음식
+    .col-auto
+      label.custom-control.custom-checkbox.mb-2.mr-sm-2.mb-sm-0
+        input.custom-control-input(type='checkbox')
+        span.custom-control-indicator
+        span.custom-control-description Remember my preference
+    .col-auto
+      button.btn.btn-primary(type='submit') Submit
+
+
+.form-group
+  label(for="tags") 등록조직이름
+  input.form-control(type="text", name="tags", placeholder="enroll company name", value=question.tags ? question.tags.join(" ") : "")
+
 .form-group
   label(for='img') Image
   input.form-control(type="file", name="img")

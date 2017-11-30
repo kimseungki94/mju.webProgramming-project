@@ -1,7 +1,7 @@
 const express = require('express');
 const Question = require('../models/question');
-const User = require('../models/user'); 
-const Answer = require('../models/answer'); 
+const User = require('../models/user');
+const Answer = require('../models/answer');
 const catchErrors = require('../lib/async-error');
 
 // 새로 추가된 패키지
@@ -11,7 +11,7 @@ const path = require('path');
 
 module.exports = io => {
   const router = express.Router();
-  
+
   // 동일한 코드가 users.js에도 있습니다. 이것은 나중에 수정합시다.
   function needAuth(req, res, next) {
     if (req.isAuthenticated()) {
@@ -36,8 +36,8 @@ module.exports = io => {
       ]};
     }
     const questions = await Question.paginate(query, {
-      sort: {createdAt: -1}, 
-      populate: 'author', 
+      sort: {createdAt: -1},
+      populate: 'author',
       page: page, limit: limit
     });
     res.render('questions/index', {questions: questions, term: term, query: req.query});
@@ -90,7 +90,7 @@ module.exports = io => {
     "image/png": "png"
   };
   const upload = multer({
-    dest: 'tmp', 
+    dest: 'tmp',
     fileFilter: (req, file, cb) => {
       var ext = mimetypes[file.mimetype];
       if (!ext) {
@@ -100,13 +100,17 @@ module.exports = io => {
     }
   }); // tmp라는 폴더를 미리 만들고 해야 함.
 
-  router.post('/', needAuth, 
+  router.post('/', needAuth,
         upload.single('img'), // img라는 필드를 req.file로 저장함.
         catchErrors(async (req, res, next) => {
     var question = new Question({
       title: req.body.title,
+      local: req.body.local,
+      start: req.body.start,
+      end: req.body.end,
       author: req.user._id,
       content: req.body.content,
+      kind: req.body.kind,
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });
     if (req.file) {
