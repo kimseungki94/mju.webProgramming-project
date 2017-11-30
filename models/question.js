@@ -10,7 +10,7 @@ var schema = new Schema({
   end: {type: String, trim: true, required: true},
   kind: {type: String, trim: true, required: true},
   content: {type: String, trim: true, required: true},
-
+  participate: {type: Number, default: 0},
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},

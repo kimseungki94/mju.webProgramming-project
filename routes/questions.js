@@ -32,7 +32,14 @@ module.exports = io => {
     if (term) {
       query = {$or: [
         {title: {'$regex': term, '$options': 'i'}},
-        {content: {'$regex': term, '$options': 'i'}}
+        {local: {'$regex': term, '$options': 'i'}},
+        {start: {'$regex': term, '$options': 'i'}},
+        {end: {'$regex': term, '$options': 'i'}},
+        {author: {'$regex': term, '$options': 'i'}},
+        {content: {'$regex': term, '$options': 'i'}},
+        {kind: {'$regex': term, '$options': 'i'}},
+        {participate: {'$regex': term, '$options': 'i'}},
+        {tags: {'$regex': term, '$options': 'i'}}
       ]};
     }
     const questions = await Question.paginate(query, {
@@ -69,7 +76,12 @@ module.exports = io => {
       return res.redirect('back');
     }
     question.title = req.body.title;
+    question.local = req.body.local;
+    question.start = req.body.start;
+    question.end = req.body.end;
     question.content = req.body.content;
+    question.kind = req.body.kind;
+    question.participate = req.body.participate;
     question.tags = req.body.tags.split(" ").map(e => e.trim());
 
     await question.save();
@@ -111,6 +123,7 @@ module.exports = io => {
       author: req.user._id,
       content: req.body.content,
       kind: req.body.kind,
+      participate: req.body.participate,
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });
     if (req.file) {
