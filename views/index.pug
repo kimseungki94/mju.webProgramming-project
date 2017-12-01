@@ -15,57 +15,19 @@ block hero-unit
           span.sr-only Previous
         a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
           span.carousel-control-next-icon(aria-hidden='true')
-          span.sr-only Next
-
-          
-block a
-  .block1
-      .container
-        .abc
-          .fonts.hide-small
-            
-            | find your next eperience
-            i.fa.fa-address-book-o
-            |     
-            br
-            |     
-            br
-          |   
-          form.form-inline(action='/action_page.php')
-            .form-group.in
-              input#email.form-control(type='email', placeholder='Search events or categories', name='email')
-            |     
-            .form-group.in
-              input#pwd.form-control.hide-small(type='password', placeholder='Seoul, Republic of korea', name='pwd')
-            |     
-            button.btn.btn-default.hide-small(type='button', data-toggle='dropdown')
-              | All Dates
-              span.caret
-            |     
-            ul.dropdown-menu
-              li
-                a(href='#') Today
-              |       
-              li
-                a(href='#') Tomorrow
-              |       
-              li
-                a(href='#') This Week
-            |   
-            button.btn.btn-danger(type='button') SEARCH          
+          span.sr-only Next          
 
               
 block content
   .container
-    Popular Events in Republic of Korea
     .row
       .col-md-6
         h3 서비스 목적
-        p 본 서비스는 웹프로그래밍 수업을 위해서 sample로 만들어보는 것입니다. 
+        p 식당의 예약 신청하는 것을 도와주는 사이트입니다. 
       .col-md-6
         h3 주요 기능
         ul
-          li 질문글 등록/보기/변경/삭제
+          li 예약글 등록/보기/변경/삭제
           li 답변글 등록/삭제
           li 사용자 관리/인증
           li API

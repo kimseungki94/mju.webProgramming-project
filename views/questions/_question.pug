@@ -1,11 +1,40 @@
-.content= question.content
-.tags.badges
-  each tag in question.tags
-    span.badge.badge-phill.badge-secondary= tag
-    | 
+.row
+  .col-sm
+    .span 상세설명 : 
+    .content= question.content
+  .col-sm
+    .span 지역 : 
+    .local= question.local
+  .col-sm
+    .span 예약시작 : 
+    .start= question.start
+.row
+  .col-sm
+    .span 예약종료 : 
+    .end= question.end
+  .col-sm
+    .span 음식종류 : 
+    .kind= question.kind
+  .col-sm
+    .span 음식분야 : 
+    .several= question.several
+.row
+  .col-sm 
+    .span 참여자 : 
+    .participate= question.participate
+  .col-sm
+    .span 예약금액(Tip:무료면 zero) : 
+    .fee= question.fee
+  .col-sm
+    .tags.badges
+      .span 특정조직이름 :
+      each tag in question.tags
+        span.badge.badge-phill.badge-secondary= tag
+    |
 .row
   .col-sm
     .numbers.
+      #[span.number.num-likes= question.numLikes] attend,
       #[span.number.num-likes= question.numLikes] likes,
       #[span.number.num-answers= question.numAnswers] answers,
       #[span.number.num-reads= question.numReads] reads
@@ -15,3 +44,23 @@
       if question.author
         | 
         | by #[a(href=`/users/${question.author.id}`)= question.author.name] 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

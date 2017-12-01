@@ -82,6 +82,8 @@ module.exports = io => {
     question.content = req.body.content;
     question.kind = req.body.kind;
     question.participate = req.body.participate;
+    question.fee = req.body.fee;
+    question.several = req.body.several;
     question.tags = req.body.tags.split(" ").map(e => e.trim());
 
     await question.save();
@@ -124,6 +126,8 @@ module.exports = io => {
       content: req.body.content,
       kind: req.body.kind,
       participate: req.body.participate,
+      several: req.body.several,
+      fee: req.body.fee,
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });
     if (req.file) {

@@ -29,7 +29,13 @@
     option 8
     option 9
     option 10
-
+    
+.form-group  
+  label(for='several') 음식 특징은?
+  select.form-control(name="several")
+    option 육(땅)
+    option 해(바다)
+    option 공(공중)
 
 .form-group
   label(for="tags") 등록조직이름
@@ -38,3 +44,45 @@
 .form-group
   label(for='img') Image
   input.form-control(type="file", name="img")
+    
+.form-group
+  .form-check.form-check-inline
+    label.form-check-label
+      input.form-check-input(type='radio', name='isfee' id="FREE")
+      |  무료
+  .form-check.form-check-inline
+    label.form-check-label
+      input.form-check-input(type='radio', name='isfee' id="NONE_FREE")
+      |  유료
+      
+.form-group
+  .input-group.fee
+  label(for="fee")
+  input.form-control(type="text", name="fee", placeholder="금액을 제시해주세요", value=question.fee)
+      
+    
+script.
+  $(function(){
+    $('#FREE, #NONE_FREE').change(function(){
+      if($('#FREE').is(":checked")){
+        this.form.fee.disabled = true;
+      }else if($('#NONE_FREE').is(":checked")){
+        this.form.fee.disabled = false;
+      }
+    });
+  });  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
