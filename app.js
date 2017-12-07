@@ -24,7 +24,6 @@ module.exports = (app, io) => {
   if (app.get('env') === 'development') {
     app.locals.pretty = true;
   }
-
   // Pug의 local에 moment라이브러리와 querystring 라이브러리를 사용할 수 있도록.
   app.locals.moment = require('moment');
   app.locals.querystring = require('querystring');
@@ -34,7 +33,7 @@ module.exports = (app, io) => {
   //=======================================================
   mongoose.Promise = global.Promise; // ES6 Native Promise를 mongoose에서 사용한다.
   const connStr = (process.env.NODE_ENV == 'production')?
-    'mongodb://dbuser:kimseungki94@ds133796.mlab.com':
+    'mongodb://dbuser1:sul1017@ds133796.mlab.com:33796/dbuser1':
     'mongodb://localhost/skkim'
   // 아래는 mLab을 사용하는 경우의 예: 본인의 접속 String으로 바꾸세요.
   // const connStr = 'mongodb://dbuser1:mju12345@ds113825.mlab.com:13825/sampledb1';
