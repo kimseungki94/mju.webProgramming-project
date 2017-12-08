@@ -11,14 +11,15 @@ block content
 
       .buttons
         if currentUser
-          button.btn.btn-primary.question-like-btn(data-id=question.id)
-            span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
-            span #[i.fa.fa-thumbs-up] 참석
-            a.btn.btn-primary.question-like-btn(href='/questions/')
+          
+            
+            
+          
+        
           button.btn.btn-primary.question-like-btn(data-id=question.id) 
             span.for-loading #[i.fa.fa-spin.fa-refresh] Loading
-            span #[i.fa.fa-thumbs-up] Like
-            
+            span #[i.fa.fa-thumbs-up] 참여
+          btn.btn.btn-primary.button(onclick="location.href='new' ",data-id=question.id) 참여자목록
           if question.author && question.author.id == currentUser.id
             | 
             a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
