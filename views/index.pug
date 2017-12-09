@@ -47,7 +47,7 @@ block b
                 p
                   | 비둘기고기, 함박관 
                 p
-                  | kim's restaurant | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, 김무락
+                  | kim's restaurant | korea, 김무락
               |     
               .caption
                 | #인원 8명     #무료
@@ -67,7 +67,7 @@ block b
                 p
                   | 삽겹살, 5공학관
                 p
-                  | kim's restaurant | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, 이철수
+                  | kim's restaurant | korea, 이철수
               |     
               .caption
                 | #인원 7명     #무료
@@ -87,7 +87,7 @@ block b
                 p
                   | 초밥, 5공학관
                 p
-                  | kim's restaurant | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;, 김승기
+                  | kim's restaurant | korea, 김승기
               |     
               .caption
                 | #인원 10명   #유료(5000)
@@ -95,4 +95,15 @@ block b
                 |   
                 span.glyphicon.glyphicon-envelope
 
+block content
+  Autocomplete Example
   
+    .form
+      input.form-control(type='text',id='q',size=20,placeholder='킴스식당이 있는 국가를 조회합니다.' )
+      i.fa.fa-spin.fa-spinner
+      ul.suggest-box
+        
+    .dummy
+      | kim's restaurant is location in world, you can see countries locationed in kim's restaurant 
+     
+    script(src='/javascripts/autocomplete.js')

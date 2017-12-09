@@ -34,10 +34,9 @@
 .row
   .col-sm
     .numbers.
-      #[span.number.num-likes= question.numLikes] attend,
-      #[span.number.num-likes= question.numLikes] likes,
-      #[span.number.num-answers= question.numAnswers] answers,
-      #[span.number.num-reads= question.numReads] reads
+      #[span.number.num-likes= question.numLikes] 참여,
+      #[span.number.num-answers= question.numAnswers] 댓글,
+      #[span.number.num-reads= question.numReads] 조회
   .col-sm
     .author
       | asked on #{moment(question.createdAt).format('YYYY-MM-DD')}
